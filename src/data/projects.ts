@@ -292,22 +292,63 @@ export const additionalProducts: AdditionalProduct[] = [
       googlePlay: "https://play.google.com/store/apps/details?id=com.app.alrowad",
     },
   },
+];
+
+/** Products contributed to as a Junior Flutter Developer at TQNEE, Jan 2020–Jul 2021. */
+export const tqneeProducts: AdditionalProduct[] = [
   {
     name: "Kushoof",
     domainLabel: "Education",
     description:
-      "Paperless student follow-up, evaluation, and transcript platform built during the TQNEE tenure — still shipping updates years later.",
+      "Student follow-up, evaluation, and transcript platform; feature development and maintenance as part of the TQNEE team.",
     links: {
       appStore: "https://apps.apple.com/app/id1522198829",
       googlePlay: "https://play.google.com/store/apps/details?id=com.tqnee.kushoof",
     },
   },
   {
-    name: "TQNEE portfolio",
-    domainLabel: "Education, services & booking",
+    name: "Snaydi Child",
+    domainLabel: "E-learning",
     description:
-      "Additional production apps shipped or maintained during 2020–2021: Snaydi Child, Makhdoum, Tourz, Kamsa3r, and Basher.",
+      "Parent-and-child learning product that predated the tenure; contributed later features and maintenance with TQNEE.",
+    links: {
+      appStore: "https://apps.apple.com/us/app/id1476991744",
+      googlePlay: "https://play.google.com/store/apps/details?id=com.tqnee.sanaydiparent",
+    },
+  },
+  {
+    name: "Makhdoum",
+    domainLabel: "Services",
+    description:
+      "Services application supported through feature development, bug fixing, and release work with the TQNEE team.",
+    links: {
+      appStore: "https://apps.apple.com/us/app/1498378815",
+    },
+  },
+  {
+    name: "Tourz",
+    domainLabel: "Travel booking",
+    description:
+      "Travel and booking product contributed to through feature development and maintenance at TQNEE.",
+    links: {
+      appStore: "https://apps.apple.com/eg/app/tourz/id1509103073",
+    },
+  },
+  {
+    name: "Kamsa3r",
+    domainLabel: "E-commerce",
+    description:
+      "E-commerce app contributed to during the TQNEE tenure; its store listings have since been removed.",
     links: {},
+  },
+  {
+    name: "Basher",
+    domainLabel: "Community",
+    description:
+      "Community app that predated the tenure; contributed later features and maintenance as part of the TQNEE team.",
+    links: {
+      appStore: "https://apps.apple.com/us/app/1463982460",
+    },
   },
 ];
 

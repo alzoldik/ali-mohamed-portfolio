@@ -8,7 +8,8 @@ import { WorkGrid } from "@/components/work-grid";
 import { ExperienceTimeline, ProductContributions } from "@/components/experience-timeline";
 import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/data/site";
-import { featuredProjects, additionalProducts } from "@/data/projects";
+import { featuredProjects, additionalProducts, tqneeProducts } from "@/data/projects";
+import type { AdditionalProduct } from "@/lib/types";
 import {
   signals,
   aboutParagraphs,
@@ -38,6 +39,42 @@ const personJsonLd = {
   sameAs: [siteConfig.contact.github, siteConfig.contact.linkedin],
   knowsAbout: ["Flutter", "Dart", "Swift", "iOS", "Android", "Mobile architecture"],
 };
+
+function AdditionalProductList({ products }: { products: readonly AdditionalProduct[] }) {
+  return (
+    <ul className="mt-5 divide-y divide-edge border-y border-edge">
+      {products.map((product) => (
+        <li
+          key={product.name}
+          className="flex flex-col gap-1 py-3.5 sm:flex-row sm:items-baseline sm:gap-4"
+        >
+          <span className="w-40 shrink-0 text-sm font-medium text-fg">{product.name}</span>
+          <span className="w-44 shrink-0 font-mono text-xs uppercase tracking-wide text-muted">
+            {product.domainLabel}
+          </span>
+          <span className="flex-1 text-sm text-muted">{product.description}</span>
+          <span className="flex shrink-0 gap-3">
+            {product.links.appStore ? (
+              <ExtLink href={product.links.appStore} context={product.name}>
+                App Store
+              </ExtLink>
+            ) : null}
+            {product.links.googlePlay ? (
+              <ExtLink href={product.links.googlePlay} context={product.name}>
+                Google Play
+              </ExtLink>
+            ) : null}
+            {product.links.website ? (
+              <ExtLink href={product.links.website} context={product.name}>
+                {product.links.websiteLabel ?? "Website"}
+              </ExtLink>
+            ) : null}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function HomePage() {
   return (
@@ -138,37 +175,22 @@ export default function HomePage() {
             <p className="mt-1 text-sm text-muted">
               Earlier and smaller client products, listed for completeness.
             </p>
-            <ul className="mt-5 divide-y divide-edge border-y border-edge">
-              {additionalProducts.map((p) => (
-                <li
-                  key={p.name}
-                  className="flex flex-col gap-1 py-3.5 sm:flex-row sm:items-baseline sm:gap-4"
-                >
-                  <span className="w-40 shrink-0 text-sm font-medium text-fg">{p.name}</span>
-                  <span className="w-44 shrink-0 font-mono text-xs uppercase tracking-wide text-muted">
-                    {p.domainLabel}
-                  </span>
-                  <span className="flex-1 text-sm text-muted">{p.description}</span>
-                  <span className="flex shrink-0 gap-3">
-                    {p.links.appStore ? (
-                      <ExtLink href={p.links.appStore} context={p.name}>
-                        App Store
-                      </ExtLink>
-                    ) : null}
-                    {p.links.googlePlay ? (
-                      <ExtLink href={p.links.googlePlay} context={p.name}>
-                        Google Play
-                      </ExtLink>
-                    ) : null}
-                    {p.links.website ? (
-                      <ExtLink href={p.links.website} context={p.name}>
-                        {p.links.websiteLabel ?? "Website"}
-                      </ExtLink>
-                    ) : null}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <AdditionalProductList products={additionalProducts} />
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div className="mt-10">
+            <h3 className="text-lg font-semibold tracking-tight text-fg">
+              TQNEE portfolio · 2020–2021
+            </h3>
+            <p className="mt-1 max-w-3xl text-sm text-muted">
+              Production Flutter apps I contributed to as a Junior Flutter Developer at TQNEE.
+              Snaydi Child and Basher predate my tenure; I contributed to their later development.
+              Across the portfolio, my work included feature development, maintenance, bug fixes,
+              testing, and releases.
+            </p>
+            <AdditionalProductList products={tqneeProducts} />
           </div>
         </Reveal>
       </Section>
