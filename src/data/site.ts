@@ -2,6 +2,8 @@ const explicitSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const vercelHost = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
 const resolvedSiteUrl =
   explicitSiteUrl ?? (vercelHost ? `https://${vercelHost}` : "http://localhost:3000");
+const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const basePath = rawBasePath ? `/${rawBasePath.replace(/^\/+|\/+$/g, "")}` : "";
 
 export const siteConfig = {
   name: "Ali Mohamed",
@@ -11,6 +13,8 @@ export const siteConfig = {
   timezoneNote: "GMT+2/+3",
   /** Canonical URL comes from the environment so previews and production stay correct. */
   url: resolvedSiteUrl.replace(/\/$/, ""),
+  /** Prefix for project-site assets that are not rendered through Next.js Link. */
+  basePath,
   seo: {
     title: "Ali Mohamed — Senior Flutter Developer & Mobile Engineer (Cairo)",
     description:
@@ -27,7 +31,7 @@ export const siteConfig = {
      * The resume buttons stay hidden until then so the site never links to a missing file.
      */
     available: false,
-    path: "/resume/Ali-Mohamed-Senior-Flutter-Developer.pdf",
+    path: `${basePath}/resume/Ali-Mohamed-Senior-Flutter-Developer.pdf`,
     fileName: "Ali-Mohamed-Senior-Flutter-Developer.pdf",
   },
   nav: [

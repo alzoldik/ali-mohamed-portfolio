@@ -46,9 +46,12 @@ export function Header() {
           <ul className="mx-auto flex max-w-5xl gap-5 overflow-x-auto px-5">
             {siteConfig.nav.map((item) => (
               <li key={item.href} className="shrink-0">
-                <a href={item.href} className="inline-flex min-h-11 items-center text-sm text-fg">
+                <Link
+                  href={item.href}
+                  className="inline-flex min-h-11 items-center text-sm text-fg"
+                >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

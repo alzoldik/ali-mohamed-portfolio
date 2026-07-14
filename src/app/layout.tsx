@@ -17,6 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const socialImageUrl = `${siteConfig.url}/opengraph-image.png`;
+const socialImageAlt = "Ali Mohamed — Senior Flutter Developer & Mobile Engineer";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -40,15 +43,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteConfig.url,
+    url: `${siteConfig.url}/`,
     siteName: "Ali Mohamed — Portfolio",
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
+    images: [{ url: socialImageUrl, width: 1200, height: 630, alt: socialImageAlt }],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
+    images: [{ url: socialImageUrl, alt: socialImageAlt }],
   },
   robots: {
     index: true,

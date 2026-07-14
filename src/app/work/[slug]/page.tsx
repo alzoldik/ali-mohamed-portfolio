@@ -6,8 +6,10 @@ import { caseStudies, getCaseStudy } from "@/data/case-studies";
 import { getProject } from "@/data/projects";
 import { ExtLink, Lettermark, Tag } from "@/components/ui";
 import { JsonLd } from "@/components/json-ld";
+import { siteConfig } from "@/data/site";
 
 export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -21,15 +23,26 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
+  const canonicalUrl = `${siteConfig.url}/work/${slug}/`;
   return {
     title: `${project.shortName} · Case study`,
     description: project.summary,
-    alternates: { canonical: `/work/${slug}` },
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: `${project.shortName} · Case study — Ali Mohamed`,
       description: project.summary,
       type: "article",
-      url: `/work/${slug}`,
+      url: canonicalUrl,
+      locale: "en_US",
+      siteName: "Ali Mohamed — Portfolio",
+      images: [
+        {
+          url: `${siteConfig.url}/opengraph-image.png`,
+          width: 1200,
+          height: 630,
+          alt: "Ali Mohamed — Senior Flutter Developer & Mobile Engineer",
+        },
+      ],
     },
   };
 }

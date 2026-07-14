@@ -19,7 +19,7 @@ import {
 } from "@/data/profile";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  alternates: { canonical: `${siteConfig.url}/` },
 };
 
 const personJsonLd = {

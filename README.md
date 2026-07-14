@@ -2,6 +2,8 @@
 
 Personal portfolio for **Ali Mohamed, Senior Flutter Developer & Mobile Engineer** (Cairo, Egypt).
 
+Live site: **https://alzoldik.github.io/ali-mohamed-portfolio/**
+
 Typography-first, content-first, static-first. No photos, no screenshots, no fake numbers — every
 project shown is backed by the research files in the parent workspace (`portfolio-data.json`,
 `profile.json`, `project-case-studies/`), and unverified or non-public-safe projects are excluded
@@ -80,25 +82,23 @@ public/resume/Ali-Mohamed-Senior-Flutter-Developer.pdf
 then set `resume.available: true` in `src/data/site.ts`. Resume buttons are hidden until then —
 no fake resume is generated.
 
-## Deploying to Vercel
+## Deploying to GitHub Pages
 
-1. Push this directory to a Git repository.
-2. In Vercel: **Add New Project** → import the repo. Framework preset: Next.js (auto-detected).
-   No build settings need to change.
-3. Add an environment variable:
-   `NEXT_PUBLIC_SITE_URL = https://your-production-domain` (no trailing slash).
-   This drives canonical URLs, Open Graph URLs, `sitemap.xml`, and `robots.txt`.
-   When omitted on Vercel, the app falls back to Vercel's production/deployment URL; setting it
-   explicitly is still recommended for a custom domain.
-4. Deploy. All routes are statically generated; there are no server secrets
-   (see `.env.example`).
+The workflow at `.github/workflows/deploy-pages.yml` validates and exports the site, then deploys
+the `out/` artifact to GitHub Pages on every push to `main`. It sets both the canonical production
+URL and the `/ali-mohamed-portfolio` project-site base path during the build.
 
-Alternatively: `npx vercel` from this directory.
+The repository's Pages source must be **GitHub Actions**. It can be selected under
+**Settings → Pages → Build and deployment**, or configured with the GitHub API. The workflow also
+supports a manual run from the repository's **Actions** tab.
+
+All routes are static and there are no server secrets. For another repository name or a custom
+domain, update `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_BASE_PATH` in the workflow.
 
 ## SEO & accessibility
 
 - Per-page titles/descriptions, canonical URLs, Open Graph + Twitter metadata
-- Code-generated text-only OG image (`src/app/opengraph-image.tsx`)
+- Code-generated text-only OG image (`src/app/opengraph-image.png/route.tsx`)
 - JSON-LD: `Person` (home) and `SoftwareApplication` (published apps' case studies)
 - `sitemap.xml` and `robots.txt` generated from the same data as the pages
 - Semantic landmarks, one `h1` per page, skip link, visible focus states,

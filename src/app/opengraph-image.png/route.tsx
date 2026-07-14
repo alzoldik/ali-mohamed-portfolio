@@ -1,11 +1,11 @@
 import { ImageResponse } from "next/og";
 
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
-export const alt = "Ali Mohamed — Senior Flutter Developer & Mobile Engineer";
+const size = { width: 1200, height: 630 };
+
+export const dynamic = "force-static";
 
 /** Code-generated, text-only Open Graph image. No photos, no stock imagery. */
-export default function OpenGraphImage() {
+export function GET() {
   return new ImageResponse(
     <div
       style={{
