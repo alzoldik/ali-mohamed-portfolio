@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Download } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { MobileNav } from "@/components/mobile-nav";
@@ -32,8 +33,9 @@ export function Header() {
             <a
               href={siteConfig.resume.path}
               download={siteConfig.resume.fileName}
-              className="hidden rounded-md border border-edge px-3 py-1.5 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent sm:inline-block"
+              className="hidden items-center gap-1.5 rounded-md border border-edge px-3 py-1.5 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent sm:inline-flex"
             >
+              <Download className="h-4 w-4" aria-hidden="true" />
               Resume
             </a>
           ) : null}

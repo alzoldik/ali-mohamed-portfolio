@@ -73,14 +73,14 @@ All structured project and profile content lives in typed data files — there i
 
 ## Resume
 
-Drop the real PDF at:
+The published CV lives at:
 
 ```
 public/resume/Ali-Mohamed-Senior-Flutter-Developer.pdf
 ```
 
-then set `resume.available: true` in `src/data/site.ts`. Resume buttons are hidden until then —
-no fake resume is generated.
+Resume download controls are enabled through `resume.available` in `src/data/site.ts`. Replace the
+PDF while keeping the same filename to publish an updated CV.
 
 ## Deploying to GitHub Pages
 

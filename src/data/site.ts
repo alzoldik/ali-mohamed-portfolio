@@ -27,10 +27,9 @@ export const siteConfig = {
   },
   resume: {
     /**
-     * Flip to true once the real PDF is placed at public/resume/Ali-Mohamed-Senior-Flutter-Developer.pdf.
-     * The resume buttons stay hidden until then so the site never links to a missing file.
+     * Keep this path in sync with the PDF under public/resume.
      */
-    available: false,
+    available: true,
     path: `${basePath}/resume/Ali-Mohamed-Senior-Flutter-Developer.pdf`,
     fileName: "Ali-Mohamed-Senior-Flutter-Developer.pdf",
   },

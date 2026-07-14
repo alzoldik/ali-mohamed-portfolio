@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { siteConfig } from "@/data/site";
 
 export function MobileNav() {
@@ -86,8 +86,9 @@ export function MobileNav() {
                     href={siteConfig.resume.path}
                     download={siteConfig.resume.fileName}
                     onClick={followLink}
-                    className="block py-3 text-sm font-medium text-accent"
+                    className="flex items-center gap-1.5 py-3 text-sm font-medium text-accent"
                   >
+                    <Download className="h-4 w-4" aria-hidden="true" />
                     Download resume
                   </a>
                 </li>
