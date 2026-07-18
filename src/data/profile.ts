@@ -12,6 +12,7 @@ export const signals: string[] = [
   "Enterprise & consumer products",
   "App Store & Google Play release ownership",
   "Flutter · Dart · Swift · Java",
+  "Remote-ready — overlaps European & Gulf hours",
 ];
 
 export const aboutParagraphs: string[] = [
