@@ -12,7 +12,6 @@ export const signals: string[] = [
   "Enterprise & consumer products",
   "App Store & Google Play release ownership",
   "Flutter · Dart · Swift · Java",
-  "Remote-ready — overlaps European & Gulf hours",
 ];
 
 export const aboutParagraphs: string[] = [
@@ -96,9 +95,9 @@ export const productContributions: ProductContribution[] = [
   {
     name: "SAWA",
     slug: "sawa",
-    role: "Founding Mobile Engineer",
+    role: "Founding Mobile Engineer · Fusion Technologies · Part-time · Oct 2021 – Present",
     description:
-      "Carpooling app for Fusion Technologies, built from the ground up as part of a small product team; live on both stores since 2023.",
+      "Carpooling and ride-sharing product developed from its earliest stage as part of a small product team; I continue to own the mobile engineering work alongside my primary role — architecture, feature delivery, production maintenance, and iOS/Android releases. Live on both stores.",
   },
   {
     name: "Neo Nerd",

@@ -121,7 +121,7 @@ export const caseStudies: CaseStudy[] = [
     purpose:
       "Connect drivers and passengers for shared rides: drivers publish rides, passengers search and book them, and both sides coordinate through in-app messaging and manage their rides end to end.",
     roleDetail:
-      "Founding Mobile Engineer — built the Flutter application from the first commit as part of a small product team.",
+      "Founding Mobile Engineer (Fusion Technologies · Part-time · Oct 2021 – Present) — built the Flutter application from the first commit as part of a small product team, and continues to own the mobile engineering work alongside his primary full-time role.",
     responsibilities: [
       "Built the Flutter application from the first commit as part of a small product team",
       "Driver and passenger flows: ride creation, ride search, booking",

@@ -142,8 +142,7 @@ export default function HomePage() {
           </div>
           <p className="mt-8 flex items-center gap-2 font-mono text-xs text-muted">
             <MapPin className="h-3.5 w-3.5 text-accent" aria-hidden="true" />
-            Cairo, Egypt ({siteConfig.timezoneNote}) · Remote-ready · Senior Flutter Developer at
-            InnovaDigits
+            Cairo, Egypt ({siteConfig.timezoneNote}) · Senior Flutter Developer at InnovaDigits
           </p>
         </div>
       </section>
@@ -304,8 +303,8 @@ export default function HomePage() {
       <Section
         id="contact"
         kicker="Contact"
-        title="Hiring a senior Flutter engineer?"
-        intro={`I'm based in Cairo (${siteConfig.timezoneNote}), overlap comfortably with European and Gulf working hours, and have experience collaborating remotely with international teams. Email is the fastest way to reach me.`}
+        title="Let's build reliable mobile products."
+        intro="I'm a Senior Flutter Developer and Mobile Engineer based in Cairo, working across architecture, production delivery, performance, media, security, and platform-specific mobile challenges. Email is the fastest way to reach me."
         className="border-t border-edge"
       >
         <Reveal>
